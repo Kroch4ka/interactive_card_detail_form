@@ -47,3 +47,8 @@ button {
   background-color: #8F8694;
   cursor: initial;
 }
+
+::placeholder {
+  color: #21092F;
+  opacity: 0.25;
+}
