@@ -149,7 +149,7 @@
   display: flex;
 }
 
-@media screen and (min-width: 1450px) {
+@media screen and (min-width: 1350px) {
   .card_details {
     flex-flow: row;
     min-height: 100%;
