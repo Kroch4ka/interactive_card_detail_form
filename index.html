@@ -4,14 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script type="module" src="scripts/index.js"></script>
   
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 <body>
   <main>
     <div class="card_details">
-      
+      <div class="card_images">
+        <div class="front">
+          <img class="logo" src="images/card-logo.svg">
+          <div class="number">
+            <span data-preview-qintet>0000</span>
+            <span data-preview-qintet>0000</span>
+            <span data-preview-qintet>0000</span>
+            <span data-preview-qintet>0000</span>
+          </div>
+          <div class="details">
+            <span class="owner" data-preview-owner>JANE APPLESEED</span>
+            <span class="expiry_date"><span data-preview-expiry-month>00</span>/<span data-preview-expiry-year>00</span></span>
+          </div>
+        </div>
+        <div class="back"><span class="cvc" data-preview-cvc>000</span></div>
+      </div>
+      <div class="card_form" data-status="IDLE">
+        <div class="idle hide">
+          <div class="field">
+            <span class="label">Cardholder Name</span>
+            <input type="text" data-check-cardholder class="input">
+            <span data-alert class="hide alert"></span>
+          </div>
+          <div class="field">
+            <span class="label">Card Number</span>
+            <input type="text" data-check-number class="input">
+            <span data-alert class="hide alert"></span>
+          </div>
+          <div class="fields">
+            <div class="field expiry_date">
+              <span class="label">Exp. Date (MM/YY)</span>
+              <div class="inputs">
+                <div>
+                  <input type="text" maxlength="2" data-check-month class="input">
+                  <input type="text" maxlength="2" data-check-year class="input">
+                </div>
+                <span data-alert class="hide alert"></span>
+              </div>
+            </div>
+            <div class="field cvc">
+              <span class="label">cvc</span>
+              <input type="text" maxlength="4" data-check-cvc class="input">
+              <span data-alert class="hide alert"></span>
+            </div>
+          </div>
+          <button class="btn" data-confirmation>Confirm</button>
+        </div>
+        <div class="success hide">
+          <img src="images/icon-complete.svg">
+          <h1 class="title">Thank you</h1>
+          <p class="description">We’ve added your card details</p>
+          <button class="btn" data-continue>Continue</button>
+        </div>
+      </div>
     </div>
   </main>
 </body>

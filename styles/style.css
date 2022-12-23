@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url(reset.css);
+@import url(app.css);
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+main {
+  height: 100%;
+}
+
+.title {
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.input {
+  border: 2px solid #DFDEE0;
+  border-radius: 7px;
+  padding: 0.7em 1.5em 0.7em 1em;
+}
+
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
