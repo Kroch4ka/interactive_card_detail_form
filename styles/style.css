@@ -34,3 +34,16 @@ button {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+.btn {
+  padding: 1em 0;
+  background-color: #21092F;
+  color: white;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.btn:disabled {
+  background-color: #8F8694;
+  cursor: initial;
+}

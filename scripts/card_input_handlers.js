@@ -6,6 +6,14 @@ import {
   SUCCESS,
 } from "./state.js";
 
+const checkAccessNextStep = () => {
+  if (!cardValidators.isValidCard()) {
+    document.querySelector('[data-confirmation]').disabled = true;
+  } else {
+    document.querySelector('[data-confirmation]').disabled = false;
+  }
+}
+
 const getAlertNode = (input) => {
   const alertNode = input.closest(".field").querySelector("[data-alert]");
   return alertNode;
@@ -41,6 +49,7 @@ const cardHolderInputHandler = (e) => {
   cardValidators.cardHolderValidator
     .validate(value)
     .then(() => {
+      checkAccessNextStep();
       setSuccessStatus(e.target);
       document.dispatchEvent(
         new CustomEvent("successCardHolder", {
@@ -60,6 +69,7 @@ const cardNumberInputHandler = (e) => {
   cardValidators.cardNumberValidator
     .validate(value)
     .then(() => {
+      checkAccessNextStep();
       setSuccessStatus(e.target);
       document.dispatchEvent(
         new CustomEvent("successCardNumber", {
@@ -78,6 +88,7 @@ const cardExpiredMonthInputHandler = (e) => {
   cardValidators.monthDateValidator
     .validate(value)
     .then(() => {
+      checkAccessNextStep();
       setSuccessStatus(e.target);
       document.dispatchEvent(
         new CustomEvent("successCardMonth", {
@@ -96,6 +107,7 @@ const cardExpiredYearInputHandler = (e) => {
   cardValidators.yearDateValidator
     .validate(value)
     .then(() => {
+      checkAccessNextStep();
       setSuccessStatus(e.target);
       document.dispatchEvent(
         new CustomEvent("successCardYear", {
@@ -114,6 +126,7 @@ const cardCVCInputHandler = (e) => {
   cardValidators.cvcValidator
     .validate(value)
     .then(() => {
+      checkAccessNextStep();
       setSuccessStatus(e.target);
       document.dispatchEvent(
         new CustomEvent("successCardCVC", {
@@ -140,6 +153,7 @@ const continueBtnHandler = () => {
 };
 
 const bindCardInputsHandlers = () => {
+  checkAccessNextStep();
   document
     .querySelector("[data-check-cardholder]")
     .addEventListener("input", cardHolderInputHandler);
